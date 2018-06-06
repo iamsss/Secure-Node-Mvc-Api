@@ -1,8 +1,8 @@
 
-const {app} = require('../server');
+const {app,hbs} = require('../server');
 const express = require('express');
 const path = require('path');
-const hbs = require('hbs');
+
 
 // Path Declarations
 const publicPath = path.join(__dirname, '../../Public');
