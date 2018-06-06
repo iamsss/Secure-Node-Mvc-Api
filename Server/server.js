@@ -11,5 +11,9 @@ require('./Pipe/currentYear.pipe');
 require('./Config/view.config');
 require('./Controllers/HomeController/home');
 
+
+// The 404 Not Found Route (ALWAYS Keep this as the last route)
+require('./Middleware/notFound');
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
