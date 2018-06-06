@@ -6,17 +6,7 @@ module.exports = { app };
 
 
 require('./Config/view.config');
-
-app.get('/', (req, res) => res.render(
-    'home',{
-        
-        pageTitle: 'About Page',
-        greeting: 'Welcome to My Home Page'
-    }
-));
-
-console.log("Partials Path : ",__dirname + '/Views/partials');
-
+require('./Controllers/HomeController/home');
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
