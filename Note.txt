@@ -1,0 +1,18 @@
+1. Installing Dev Dependency 
+
+--> Mocha : It is a simple, extensible and fast testing library for Node.js
+--> Expect is used with Mocha to write assertion 
+--> Supertest provide a high-level abstraction for testing HTTP
+--> Nodeman is for watching the changes
+
+2. Installing Dependency
+
+--> hbs is basically view engine help to render view and partials view
+--> express is server
+--> body-parser acts as middleware to handle the bad request
+--> lodash has lot of builtin library
+--> Mongodb And Mongoose is for database
+--> validator is used for server side verification 
+--> bcrypt to help you hash passwords
+--> jsonwebtoken used to generate jwt token and verify on that basics
+--> crypto-js for crypto standards.
