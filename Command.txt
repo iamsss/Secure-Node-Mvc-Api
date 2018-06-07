@@ -1,0 +1,3 @@
+### Installing tedious for MSSQL , ORM Sequelize 
+
+>> npm install --save sequelize tedious
