@@ -21,4 +21,8 @@ require('./Controllers/UserController/user.controller');
 // The 404 Not Found Route (ALWAYS Keep this as the last route)
 require('./Middleware/notFound');
 
+if(process.env.NODE_ENV != 'test') {
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+}else{
+    console.log("Testing process");
+}
