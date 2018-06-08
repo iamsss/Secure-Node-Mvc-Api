@@ -9,11 +9,7 @@ const users = [
     
 ]
 const populate2users = (done) => {
-User.bulkCreate([
-    { username: 'barfooz', email: 'saurav@gmail.com',birthday: new Date(1980, 6, 20) },
-    { username: 'saurav', email: 'hjdhkj@hskd.com', birthday: new Date(1980, 6, 20) }
-    
-]).then(u => {
+User.bulkCreate(users).then(u => {
     done();
 });
 }
