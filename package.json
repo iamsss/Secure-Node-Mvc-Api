@@ -9,8 +9,8 @@
     "test-function": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha App.Tests/FunctionTests/*.test.js",
     "test-controller": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha App.Tests/ControllerTests/*.test.js",
     "test-watch": " nodemon --exec \"npm test\"",
-    "test-function-watch": "nodemon --exec \"npm test-function\"",
-    "test-controller-watch": "nodemon --exec \"npm test-controller\""
+    "test-function-watch": "nodemon --exec \"npm run test-function\"",
+    "test-controller-watch": "nodemon --exec \"npm run test-controller\""
   },
   "author": "",
   "license": "ISC",
