@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node Server/server.js",
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha App.Tests/**/*.test.js",
-    "test-watch": " nodemon --exec \"npm test\""
+    "test-function": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha App.Tests/FunctionTests/*.test.js",
+    "test-controller": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha App.Tests/ControllerTests/*.test.js",
+    "test-watch": " nodemon --exec \"npm test\"",
+    "test-function-watch": "nodemon --exec \"npm test-function\"",
+    "test-controller-watch": "nodemon --exec \"npm test-controller\""
   },
   "author": "",
   "license": "ISC",
