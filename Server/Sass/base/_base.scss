@@ -1,0 +1,46 @@
+
+*,
+*::after,
+*::before{
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%; // 1rem = 10px
+
+    @include respond(tab-l){ 
+        font-size: 56.25%; // 1 rem = 9 px
+    }
+
+    @include respond(tab-p){
+        font-size: 50%; // 1 rem = 8px
+    }
+    
+    @include respond(bd){
+        font-size: 80%;
+    }
+}
+
+body {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size:1.6rem;
+    line-height: 1.7;
+    color:$color-grey-dark;
+    padding: 3.0rem;
+    box-sizing: border-box;
+    position: relative;
+
+    @include respond(tab-p){
+        padding: 0; // 1 rem = 8px
+    }
+}
+
+
+::selection{
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+

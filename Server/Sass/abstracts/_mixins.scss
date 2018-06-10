@@ -1,0 +1,53 @@
+@mixin clearfix{
+    &::after{
+        content:"";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+// MEDIA QUERRY MANAGER
+/*
+
+0-600px             PHONE
+600-900Px           Tablet portrait
+900-1200px          Tablet landscape
+1200-1800px         is where our normal styles apply
+1800above           Big Desktop
+
+
+@mixin respond-phone {
+    @media (max-width: 600px){ // @content is used pass the entire block of code in mixins 
+         @content 
+    } 
+};
+
+*/
+
+
+//using if else directive of mixins
+
+@mixin respond($breakpoint){
+    @if $breakpoint == pn {
+        @media(max-width: 37.5em){ @content }; //600px
+    }
+    @if $breakpoint == tab-p {
+        @media(max-width: 56.25em){ @content };  //900px
+    }
+    @if $breakpoint == tab-l {
+        @media(max-width: 75em){ @content }; //1200px
+    }
+    @if $breakpoint == bd {
+        @media(min-width: 112.5em){ @content }; // 1800px
+    }
+}
+
+

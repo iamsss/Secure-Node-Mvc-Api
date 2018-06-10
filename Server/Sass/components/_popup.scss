@@ -1,0 +1,88 @@
+.popup{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 5000;
+    position: fixed;
+    background-color:rgba($color-black,.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &__content{
+        @include absCenter;
+        height: 60vh;
+        width: 75%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black,.2);
+        display: table;  
+        overflow: hidden;  
+        transform: translate(-50%,-50%) scale(.25);
+        opacity: 0;
+        transition: all .4s .2s; // .2s for delay 
+    }
+
+    &__left{
+        width: 33.33%;
+        display: table-cell; // work when parent elements display property is table
+                             // it basically cover the entire height
+    }
+    &__right{
+        width: 66.66%;
+        display: table-cell;
+        vertical-align: middle; // used only with table-cell display property
+        padding: 3rem 5rem;
+    }
+    &__img{
+        display: block;
+        width: 100%;
+    }
+    &__text{
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+
+        -moz-column-count: 2; // to creating column of text paragrtaph
+        -moz-column-gap: 4rem;
+        -moz-column-rule: 1px solid $color-grey-light-2;
+        
+        column-count: 2; // to creating column of text paragrtaph
+        column-gap: 4rem;
+        column-rule: 1px solid $color-grey-light-2;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto; // to put hypens auto in uncomplete text than complete it in next line
+    }
+
+    
+    &:target{ // it worked when link target to popup class is clicked like this <a href="#popup">Popup Now</a>
+        // we must have to specify the relevant id of the class in href
+opacity: 1;
+visibility: visible;
+}
+
+&__close{
+&:link,
+&:visited{
+    color: $color-grey-dark;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+&:hover{
+    color:$color-primary;
+     }
+}
+&:target &__content{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%,-50%) scale(1);
+  
+}
+}

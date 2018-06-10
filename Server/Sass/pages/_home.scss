@@ -1,0 +1,124 @@
+.section-about{
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh;
+
+    @include respond(tab-p){
+        padding: 20rem 0;
+}
+}
+
+.section-features{
+    position: relative;
+    padding: 20rem 0; 
+    background-image:linear-gradient(
+        to right bottom,
+        rgba($color-primary-light,0.8),
+        rgba($color-primary-dark ,0.8)
+    ) ,url(../img/nat-4.jpg);
+    background-size: cover;
+    z-index: 3;
+    
+    transform: skewY(-7deg); // to apply the cross-cut effect similar to clip-path: polygon(0 0,100% 0,100% 75vh,0 100%); do
+    
+    margin-top: -10rem;
+    & > * { // direct child of section-features to select all direct children 
+            transform: skewY(7deg); // to diseffect the screw on direct children
+    }
+
+    @include respond(tab-p){
+        padding: 10rem 0;
+}
+}
+
+.section-team{
+    position: relative;
+    background-color: $color-grey-light-1;
+    padding: 20rem 0 17rem 0;
+    margin-top: -15rem;
+    top: 7rem;
+
+    @include respond(tab-p){
+        padding: 20rem 0 10rem 0;
+    }
+}
+
+.section-stories{
+    position: relative;
+    padding:15rem 0;
+    @include respond(tab-p){
+        padding: 10rem 0;
+}
+}
+.section-project{
+    padding: 18rem 0;
+    position: relative;
+    top: 8rem;
+    background: #673AB7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #512DA8, #673AB7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    
+    transform: skewY(-7deg); // to apply the cross-cut effect similar to clip-path: polygon(0 0,100% 0,100% 75vh,0 100%); do
+    
+    margin-top: -10rem;
+}
+
+.section-motivational{
+    padding: 15rem 8rem;
+    background-image: linear-gradient(to right bottom, 
+    $color-tertiary-light,
+    $color-tertiary-dark);
+    transform: scaleY(1.1);
+
+}
+
+.section-book{
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, 
+    $color-primary-light,
+    $color-primary-dark);
+
+    @include respond(tab-p){
+        padding: 10rem 0;
+}
+}
+
+
+.section-info{
+    padding: 15rem 0;
+    position: relative;
+    z-index: 3;
+    background-color:$color-grey-light-1;
+    text-align: center;
+}
+
+
+
+.book{
+    background-image: linear-gradient(105deg,rgba($color-white,.9) 
+        0%,rgba(235, 227, 251, .9) 50%,
+        transparent 50%),
+        url(../img/cu.jpg);
+    background-size: 100%; // it fixes the background image in x direction
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black,.2);
+    @include respond(tab-l){
+        background-image: linear-gradient(105deg,rgba($color-white,.9) 
+        0%,rgba($color-white,.9) 65%,
+        transparent 65%),
+        url(../img/nat-10.jpg);
+        background-size: cover;   
+    }
+    @include respond(tab-p){
+        background-image: linear-gradient(rgba($color-white,.9) 
+        0%,rgba($color-white,.9) 100%);
+    }    
+    &__form{
+        width:50%;
+        padding: 6rem;
+        @include respond(tab-p){
+            width: 100%;
+        }  
+    }
+}

@@ -1,0 +1,10 @@
+.motivational{
+        text-align: center;
+    &__text{
+        color: white;
+        font-family: inherit;
+        text-transform: uppercase;
+        font-size: 6rem;
+        letter-spacing: 5px;
+    }
+}

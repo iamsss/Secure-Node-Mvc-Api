@@ -1,0 +1,10 @@
+.project{
+    transform: skewY(7deg);
+    text-align: center;
+    &__img{
+        width:180px;
+        margin-top: 8rem;
+        box-shadow: 0 1.5rem 4rem rgba($color-black,.15);
+        transition: all .2s;    
+    }
+}

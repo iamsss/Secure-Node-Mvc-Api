@@ -1,0 +1,29 @@
+.team{
+    
+    width: 100%;
+    height: 400px;
+    background-color: rgba($color-white,.8);
+    font-size: 1.5rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black,.15);
+    transition: all .2s;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+
+    &__img{
+        &--responsive{
+            width: 100%;
+        }
+    }
+
+    &__container{
+
+        &--text{
+            padding: 10px;
+            text-align: justify;
+        }
+
+    }
+}

@@ -1,0 +1,31 @@
+.info{
+    
+    text-align: left;
+    &__icon{
+        font-size: 4rem;
+        position: relative;
+        top: 13px;
+        margin-right: 5px;
+        background-image: linear-gradient(to right ,$color-primary-light,$color-primary-dark); 
+        display: inline-block;
+        -webkit-background-clip: text; // applying text as gradient color step 1
+        color: transparent; // applying text as gradient color step 2
+        
+    }
+
+    &__img{
+        width: 35%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black,.4);
+        border-radius: 2px;
+        position: absolute;
+        transition: all .2s;
+        outline-offset: 2rem;
+        &:hover{
+            outline: 1.5rem solid $color-primary;
+            transform: scale(1.05) translateY(-.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black,.5);
+            
+          
+        }
+    }
+}
