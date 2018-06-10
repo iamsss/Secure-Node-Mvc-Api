@@ -1,3 +1,8 @@
 ### Installing tedious for MSSQL , ORM Sequelize 
 
 >> npm install --save sequelize tedious
+
+### Installing node-sass as Development dependencies
+
+    >> npm install node-sass --save-dev
+    >> npm run compile:sass
