@@ -12,7 +12,8 @@
     "test-function-watch": "nodemon --exec \"npm run test-function\"",
     "test-controller-watch": "nodemon --exec \"npm run test-controller\"",
     "compile:sass": "node-sass Server/Sass/main.scss Public/css/style.css -w",
-    "build": "webpack Public/js/index.js -o Public/js/bundle.js"
+    "dev": "webpack --mode development Public/js/index.js -o Public/js/bundle.js -w",
+    "build": "webpack --mode production Public/js/index.js -o Public/js/bundle.js"
   },
   "author": "",
   "license": "ISC",
