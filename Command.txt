@@ -6,3 +6,9 @@
 
     >> npm install node-sass --save-dev
     >> npm run compile:sass
+
+### Installing webpack as Development dependencies
+
+    >> npm install webpack --save-dev
+    >> npm install webpack-cli --save-dev
+
