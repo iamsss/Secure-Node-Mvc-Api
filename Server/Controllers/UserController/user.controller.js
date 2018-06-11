@@ -4,7 +4,7 @@ const {
 const {
   User
 } = require('../../Model/User');
-const {generateToken, authenticate} = require('../../Middleware/authenticate');
+const {generateToken, authenticate,HasRole} = require('../../Middleware/authenticate');
 
 const jwt = require('jsonwebtoken');
 // Get All Users 
@@ -18,7 +18,7 @@ app.get('/users',authenticate, (req, res) => {
 });
 
 //Get Users By Id
-app.get('/users/:id', (req, res) => {
+app.get('/users/:id', HasRole("Admin") , (req, res) => {
   var id = req.params.id;
 
   User.findById(id).then((user) => {
@@ -39,12 +39,13 @@ app.post('/users', (req, res) => {
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
-    role: 'User'
+    role: req.body.role
   }).then(user => {
     var userTokenData = {
       id: user.id,
       username: user.username,
       email: user.email,
+      role: user.role,
       access:'auth'
     }
       
