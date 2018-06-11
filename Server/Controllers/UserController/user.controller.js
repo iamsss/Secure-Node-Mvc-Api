@@ -4,10 +4,11 @@ const {
 const {
   User
 } = require('../../Model/User');
+const {generateToken, authenticate} = require('../../Middleware/authenticate');
 
-
+const jwt = require('jsonwebtoken');
 // Get All Users 
-app.get('/users', (req, res) => {
+app.get('/users',authenticate, (req, res) => {
   // find multiple entries
   User.findAll().then(projects => {
     res.send(projects);
@@ -26,22 +27,31 @@ app.get('/users/:id', (req, res) => {
     }
     res.send(user);
   }).catch((e) => {
-    res.status(404).send();
+    res.status(404).send(e);
   })
 });
 
 
 // Post Request 
 app.post('/users', (req, res) => {
+  
   User.create({
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
     role: 'User'
   }).then(user => {
-    res.status(200).send(user);
-  }).catch((err) => {
-    res.status(400).send(err);
+    var userTokenData = {
+      id: user.id,
+      username: user.username,
+      email: user.email,
+      access:'auth'
+    }
+      
+      const token = jwt.sign(userTokenData, process.env.JWT_SECRET).toString();
+      res.header('x-auth', token).send(user);
+  }).catch((e) => {
+    res.status(400).send(e);
   });
 })
 
